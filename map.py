@@ -1,6 +1,6 @@
 import csv
 
-with open ('/home/kazem/project/data.csv') as csv_file:
+with open ('data.csv') as csv_file:
     csv_reader=csv.reader(csv_file ,delimiter=',')
     line_count=0
     l=list()
@@ -18,27 +18,36 @@ print(l)
 
 
 
-  
-for i in range(0,len(l)):
-    for j in range(0,len(l)): 
 
-        if l[j][0] == l[0][0] :
+i=len(l)-1
+
+while i > 0 :
+    
+    x=l[i][0]
+
+    for j in reversed(range(0,len(l))):
+
+        if l[j][0] == x :
 
             l2.append(l[j][1])
             l.pop(j)
-
-        j+=1
+    if i == 0 : 
+        break
+    i=len(l)-1       
+    print(i)
+    print(len(l))
+    print(l2,len(l2))
+    
+            
+ 
         
-        if j == len(l): 
-            break
 
-    i+=1    
-    if i == len(l): 
-        break  
 
-    d[l[i][0]]=l2
+  
 
-    l2.clear()
+    #d[l[i][0]]=l2
+
+   
 
   
     
